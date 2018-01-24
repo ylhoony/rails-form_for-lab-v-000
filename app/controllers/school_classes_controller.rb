@@ -26,4 +26,9 @@ class SchoolClassesController < ApplicationController
     redirect_to student_path(@student)
   end
 
+  private
+  def post_params(*args)
+    params.require(:school_class).permit(*args)
+  end
+
 end
